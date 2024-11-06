@@ -85,6 +85,8 @@ class TempestTheme extends Theme
         $cssTempest = $this->url('Tempest.css');
         $output .= "<link rel='stylesheet' type='text/css' href='$cssTempest'>";
 
+        $cssGenerator = new CSSGenerator();
+
         if ($appearanceColor = $this->getSetting('appearance_color')) {
             $oklch = ColorFactory::new($appearanceColor)->to(ColorSpace::OkLch);
             $cssGenerator = new CSSGenerator();

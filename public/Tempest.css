@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 :root {
-    --primary-color: #32e281;  
-    --secondary-color: #663399;
+    --primary-color: 0.314 0.784 267.78deg;
+    --secondary-color: 0.314 0.5 267.78deg;
 
     --background-dark: #0f172a;
     --card-background: #1e293b;
@@ -10,24 +10,25 @@
     --text-secondary: #94a3b8;
     --shadow-color: rgba(0, 0, 0, 0.25);
     --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .tag-ann {
   background-color: rgb(230, 225, 225);
-  color: oklch(var(--primary-color));;
+  color: oklch(var(--primary-color));
 }
 
 .group:hover h2 {
-  color: oklch(var(--primary-color));;;
+  color: oklch(var(--primary-color));
 }
 
 .group:hover h2 a {
-  color: oklch(var(--primary-color));;;
-  text-decoration-color: oklch(var(--primary-color));;;
+  color: oklch(var(--primary-color));
+  text-decoration-color: oklch(var(--primary-color));
 }
 
 .read-full-ann {
-  color: oklch(var(--primary-color));;;
+  color: oklch(var(--primary-color));
 }
 
 .read-full-ann:hover {
@@ -103,6 +104,10 @@
   color: oklch(var(--primary-color));
 }
 
+.cd-passed {
+  background: linear-gradient(to right, oklch(var(--primary-color)), oklch(var(--secondary-color)));
+}
+
 .text-gradient {
   background: linear-gradient(to right, oklch(var(--primary-color)), oklch(var(--secondary-color)));
   -webkit-background-clip: text;
@@ -130,8 +135,6 @@
 }
 
 :root {
-  --primary-color: #4299e1;
-  --secondary-color: #3182ce;
   --accent-color: #f6ad55;
   --text-primary: #2d3748;
   --text-secondary: #4a5568;
@@ -1280,6 +1283,107 @@
   }
 }
 
+@media (max-width: 2588px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+
+  .banner-bg {
+    background: linear-gradient(to right, oklch(var(--primary-color)), oklch(var(--secondary-color)));
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 7 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: 5% !important;
+  }
+}
+
+@media (max-width: 2430px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 7 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: 3.5% !important;
+  }
+}
+
+@media (max-width: 2280px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: 2.5% !important;
+  }
+}
+
+@media (max-width: 2180px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: 1.5% !important;
+  }
+}
+
+@media (max-width: 2080px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: -1% !important;
+  }
+}
+
+@media (max-width: 1920px) {
+  .banner {
+    margin-top: -9.8% !important;
+  }
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8 !important;
+    object-fit: cover;
+  }
+
+  .conference-title {
+    margin-top: -3% !important;
+  }
+}
+
+
 @media (max-width: 1772px) {
   .banner {
     margin-top: -9.8% !important;
@@ -1333,6 +1437,7 @@
   .banner {
     margin-top: -9.8% !important;
   }
+
   .banner-image {
     width: 100%;
     height: auto;
@@ -1349,11 +1454,16 @@
   .banner {
     margin-top: -9.8% !important;
   }
+
   .banner-image {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 8.8 !important;
     object-fit: cover;
+  }
+
+  .banner-bg {
+    aspect-ratio: 16 / 8.8 !important;
   }
 
   .conference-title {
@@ -1375,6 +1485,10 @@
   .conference-title {
     margin-top: -20% !important;
   }
+
+  .banner-bg {
+    aspect-ratio: 16 / 10 !important;
+  }
 }
 
 @media (max-width: 1310px) {
@@ -1391,6 +1505,10 @@
   .conference-title {
     margin-top: -22% !important;
   }
+
+  .banner-bg {
+    aspect-ratio: 16 / 10 !important;
+  }
 }
 
 @media (max-width: 1278px) {
@@ -1402,6 +1520,10 @@
     height: auto;
     aspect-ratio: 16 / 10 !important;
     object-fit: cover;
+  }
+
+  .banner-bg {
+    aspect-ratio: 16 / 10 !important;
   }
 
   .conference-title {
@@ -1420,6 +1542,10 @@
     object-fit: cover;
   }
 
+  .banner-bg {
+    aspect-ratio: 16 / 10 !important;
+  }
+
   .conference-title {
     margin-top: -21% !important;
   }
@@ -1434,6 +1560,10 @@
     height: auto;
     aspect-ratio: 16 / 11 !important;
     object-fit: cover;
+  }
+
+  .banner-bg {
+    aspect-ratio: 16 / 11 !important;
   }
 
   .conference-title {
@@ -1466,6 +1596,11 @@
     max-width: 64rem;
     text-align: center;
   }
+
+  .banner-bg {
+    aspect-ratio: 16 / 11 !important;
+  }
+
   .conference-title h1 {
     font-size: 26px;
     margin-right: -5%;
@@ -1523,6 +1658,10 @@
     aspect-ratio: 16 / 14 !important;
     object-fit: cover;
   }
+
+  .banner-bg {
+    aspect-ratio: 16 / 14 !important;
+  }
   .conference-title .countdown-container {
     width: 80%;
     max-width: 64rem;
@@ -1559,6 +1698,10 @@
     object-fit: cover;
   }
 
+  .banner-bg {
+    aspect-ratio: 16 / 13 !important;
+  }
+
   .conference-title {
     margin-top: -22% !important;
   }
@@ -1576,6 +1719,10 @@
     object-fit: cover;
   }
 
+  .banner-bg {
+    aspect-ratio: 16 / 13 !important;
+  }
+
   .conference-title {
     margin-top: -30% !important;
   }
@@ -1589,6 +1736,10 @@
 
   .navbar a {
       margin: 0.5rem 0;
+  }
+
+  .banner-bg {
+    display: none;
   }
 
   .navbar a {
@@ -3038,8 +3189,8 @@
 }
 
 .acp-hero {
-  background-color: #f8fafc;
-  min-height: 60vh;
+  background-color: #e2e8f0;
+  min-height: 30vh;
   display: flex;
   align-items: center;
   position: relative;
