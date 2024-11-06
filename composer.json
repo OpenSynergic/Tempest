@@ -1,0 +1,14 @@
+{
+    "name": "leconfe/tempest",
+    "autoload": {
+        "psr-4": {
+            "Tempest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leconfe"
+        }
+    ],
+    "require": {}
+}
