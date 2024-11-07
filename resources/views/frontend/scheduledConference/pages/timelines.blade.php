@@ -1,4 +1,4 @@
-<x-website::layouts.main>
+<x-tempest::layouts.main>
     <main class="min-h-screen py-8">
         <div class="container mx-auto px-4 max-w-6xl space-y-6">
             <nav class="bg-white rounded-lg shadow-sm">
@@ -141,4 +141,4 @@
         </div>
         @endif
     </div>
-</x-website::layouts.main>
+</x-tempest::layouts.main>

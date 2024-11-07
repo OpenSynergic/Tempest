@@ -1,6 +1,6 @@
-<x-website::layouts.main>
+<x-tempest::layouts.main>
     <div class="mb-6">
-        <x-website::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+        <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
     </div>
     <div class="relative">
         <div class="flex mb-5 space-x-4">
@@ -31,4 +31,4 @@
             </div>
         </div>
     </div>
-</x-website::layouts.main>
+</x-tempest::layouts.main>

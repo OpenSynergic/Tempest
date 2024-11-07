@@ -99,12 +99,12 @@
                             />
                             <span class="text-sm text-gray-600">{{ __('general.remember_me') }}</span>
                         </label>
-                        <x-website::link 
+                        <x-tempest::link 
                             :href="$resetPasswordUrl" 
                             class="text-sm text-gray-600 hover:text-red-700 font-medium hover:underline transition-colors"
                         >
                             {{ __('general.forgot_password_question') }}
-                        </x-website::link>
+                        </x-tempest::link>
                     </div>
 
                     <div class="space-y-3 pt-2">
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
 
-                            <x-website::link 
+                            <x-tempest::link 
                                 class="w-full flex items-center justify-center px-4 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium transition-all duration-200"
                                 :href="$registerUrl"
                             >
@@ -140,7 +140,7 @@
                                     <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
                                 </svg>
                                 {{ __('general.register') }}
-                            </x-website::link>
+                            </x-tempest::link>
                         @endif
                     </div>
                 </form>

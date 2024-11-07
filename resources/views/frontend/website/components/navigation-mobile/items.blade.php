@@ -11,24 +11,24 @@
             @php($item = new App\Classes\NavigationItem(...$item))
             <li class="relative">
                 @if ($level >= 1)
-                    <x-website::link @class([
+                    <x-tempest::link @class([
                         'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full hover:before:block',
                         'font-semibold text-primary before:bg-primary' => request()->url() === $item->getUrl(),
                         'before:hidden before:bg-slate-300 text-slate-500 hover:text-slate-600' => request()->url() !== $item->getUrl(),
                     ]) :href="$item->getUrl()">
                         {{ $item->getLabel() }}
-                    </x-website::link>
+                    </x-tempest::link>
                 @else
-                    <x-website::link @class([
+                    <x-tempest::link @class([
                         'text-primary font-semibold' => request()->url() === $item->getUrl(),
                         'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
                     ]) :href="$item->getUrl()">
                         {{ $item->getLabel() }}
-                    </x-website::link>
+                    </x-tempest::link>
                 @endif
             </li>
             @if ($item->hasChildren())
-                <x-website::navigation-mobile.items 
+                <x-tempest::navigation-mobile.items 
                         :items="$item->getChildren()" 
                         :level="$level + 1"
                         @class([

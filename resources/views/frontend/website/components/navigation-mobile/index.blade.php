@@ -18,16 +18,16 @@
                             class="w-screen max-w-xs">
                             <div
                                 class="flex flex-col h-full pb-5 px-4 sm:px-6 overflow-y-scroll bg-white border-r shadow-lg border-neutral-100/70 justify-between">
-                                <x-website::navigation-mobile.items :items="$items" />
+                                <x-tempest::navigation-mobile.items :items="$items" />
                                 <div class="flex flex-col gap-2">
                                     @if (\Filament\Facades\Filament::getDefaultPanel()->auth()->user())
-                                        <x-website::link href="#" :spa="false"
-                                            class="btn btn-sm btn-primary rounded px-4 font-normal">Dashboard</x-website::link>
+                                        <x-tempest::link href="#" :spa="false"
+                                            class="btn btn-sm btn-primary rounded px-4 font-normal">Dashboard</x-tempest::link>
                                     @else
-                                        <x-website::link :href="route('livewirePageGroup.website.pages.register')" :spa="false"
-                                            class="btn btn-sm btn-primary rounded px-4 font-normal">Register</x-website::link>
-                                        <x-website::link :href="route('livewirePageGroup.website.pages.login')" :spa="false"
-                                            class="btn btn-sm rounded px-4 font-normal text-gray-900">Login</x-website::link>
+                                        <x-tempest::link :href="route('livewirePageGroup.website.pages.register')" :spa="false"
+                                            class="btn btn-sm btn-primary rounded px-4 font-normal">Register</x-tempest::link>
+                                        <x-tempest::link :href="route('livewirePageGroup.website.pages.login')" :spa="false"
+                                            class="btn btn-sm rounded px-4 font-normal text-gray-900">Login</x-tempest::link>
                                     @endif
                                 </div>
                             </div>

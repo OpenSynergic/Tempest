@@ -1,6 +1,6 @@
-<x-website::layouts.main>
+<x-tempest::layouts.main>
     <div class="mb-6">
-        <x-website::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+        <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
     </div>
     <div class="relative">
         <div class="flex mb-5 space-x-4">
@@ -11,4 +11,4 @@
             This {{ $name }} utilizes the <a href="https://leconfe.com">Leconfe</a> platform, an open-source conference management software. Developed, maintained, and freely distributed by Open Synergic under the GNU General Public License, Leconfe offers a robust solution for organizing and managing conferences. For more information about the platform, please visit the <a href="https://leconfe.com">Leconfe</a> website.
         </div>
     </div>
-</x-website::layouts.main>
+</x-tempest::layouts.main>

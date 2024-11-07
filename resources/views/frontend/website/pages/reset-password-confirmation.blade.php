@@ -2,7 +2,7 @@
     <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
 
         <div class="mb-6">
-            <x-website::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
 
         <div class="max-w-md mx-auto">
