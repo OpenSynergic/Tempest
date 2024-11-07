@@ -1,4 +1,4 @@
-<x-website::layouts.main>
+<x-tempest::layouts.main>
     <div class="container mx-auto px-4 py-12">
         <div class="mb-8">
             <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="breadcrumbs text-sm bg-white rounded-lg shadow-sm px-4 py-3 font-medium" />
@@ -116,4 +116,4 @@
             }
         }
     </script>
-</x-website::layouts.main>
+</x-tempest::layouts.main>

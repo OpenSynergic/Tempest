@@ -8,13 +8,13 @@
         @foreach ($breadcrumbs as $url => $label)
             <li class="flex items-center">
                 @if(!is_int($url))
-                    <x-website::link 
+                    <x-tempest::link 
                         :href="$url" 
                         class="text-gray-600 transition-colors duration-200"
                         {{-- wire:navigate --}}
                     >
                         {{ $label }}
-                    </x-website::link>
+                    </x-tempest::link>
                 @else
                     <span class="">{{ $label }}</span>
                 @endif

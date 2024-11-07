@@ -9,13 +9,13 @@
         <div class="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="navbar flex items-center justify-between w-full">
                 <div class="navbar-starts flex items-center gap-4">
-                    <x-website::navigation-menu-mobile class="lg:hidden" />
-                    <x-website::logo :headerLogo="$headerLogo"/>
+                    <x-tempest::navigation-menu-mobile class="lg:hidden" />
+                    <x-tempest::logo :headerLogo="$headerLogo"/>
                 </div>
 
                 <div class="hidden  lg:flex items-center gap-8 ">
                     <div class="nav-menu flex items-center">
-                    <x-website::navigation-menu 
+                    <x-tempest::navigation-menu 
                         :items="$primaryNavigationItems" 
                         class="main-nav flex items-center gap-6" />
                     </div>

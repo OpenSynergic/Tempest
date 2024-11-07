@@ -24,7 +24,7 @@
                             <div
                                 class="bg-white border-neutral-100/70 border-r shadow-lg h-svh overflow-y-scroll">
                                 <div class="ps-4 py-2 bg-primary text-primary-content flex">
-                                    <x-website::logo :headerLogo="$headerLogo"/>
+                                    <x-tempest::logo :headerLogo="$headerLogo"/>
                                     <button @@click="closeSlideOver" class="btn btn-sm btn-square btn-ghost">
                                         <x-heroicon-o-x-mark class="h-6 w-6" />
                                     </button>
@@ -39,13 +39,13 @@
                                                     @endif
                                                     @if ($item->children->isEmpty())
                                                         <li class="navigation-menu-item relative">
-                                                            <x-website::link @class([
+                                                            <x-tempest::link @class([
                                                                 'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
                                                                 'text-primary font-semibold' => request()->url() === $item->getUrl(),
                                                                 'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
                                                             ]) :href="$item->getUrl()">
                                                                 {{ $item->getLabel() }}
-                                                            </x-website::link>
+                                                            </x-tempest::link>
                                                         </li>
                                                     @else
                                                         <li x-data="{ open: false }" class="navigation-menu-item relative">
@@ -65,13 +65,13 @@
                                                             <ul x-show="open" x-collapse class="mt-1">
                                                                 @foreach ($item->children as $key => $childItem)
                                                                     <li class="navigation-menu-item relative">
-                                                                        <x-website::link @class([
+                                                                        <x-tempest::link @class([
                                                                             'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
                                                                             'text-primary font-semibold' => request()->url() === $item->getUrl(),
                                                                             'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
                                                                         ]) :href="$item->getUrl()">
                                                                             {{ $childItem->getLabel() }}
-                                                                        </x-website::link>
+                                                                        </x-tempest::link>
                                                                     </li>
                                                                 @endforeach
                                                             </ul>
@@ -89,13 +89,13 @@
                                                 @endif
                                                 @if ($item->children->isEmpty())
                                                     <li class="navigation-menu-item relative">
-                                                        <x-website::link @class([
+                                                        <x-tempest::link @class([
                                                             'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
                                                             'text-primary font-semibold' => request()->url() === $item->getUrl(),
                                                             'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
                                                         ]) :href="$item->getUrl()">
                                                             {{ $item->getLabel() }}
-                                                        </x-website::link>
+                                                        </x-tempest::link>
                                                     </li>
                                                 @else
                                                     <li x-data="{ open: false }" class="navigation-menu-item relative">
@@ -115,13 +115,13 @@
                                                         <ul x-show="open" x-collapse class="mt-1">
                                                             @foreach ($item->children as $key => $childItem)
                                                                 <li class="navigation-menu-item relative">
-                                                                    <x-website::link @class([
+                                                                    <x-tempest::link @class([
                                                                         'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
                                                                         'text-primary font-semibold' => request()->url() === $item->getUrl(),
                                                                         'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
                                                                     ]) :href="$item->getUrl()">
                                                                         {{ $childItem->getLabel() }}
-                                                                    </x-website::link>
+                                                                    </x-tempest::link>
                                                                 </li>
                                                             @endforeach
                                                         </ul>

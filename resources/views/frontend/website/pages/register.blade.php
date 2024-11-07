@@ -320,7 +320,7 @@
                                     </div>
                                 </div>
 
-                                <x-website::link 
+                                <x-tempest::link 
                                     class="w-full flex items-center justify-center px-4 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium transition-all duration-200"
                                     :href="$loginUrl"
                                 >
@@ -328,7 +328,7 @@
                                         <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
                                     </svg>
                                     {{ __('general.login') }}
-                                </x-website::link>
+                                </x-tempest::link>
                             </div>
                         </form>
                     @else
@@ -339,14 +339,14 @@
                         <p class="text-center text-gray-600">{{ __('general.registration_complete_message') }}</p>
                         <ul class='list-disc list-inside space-y-2'>
                             <li>
-                                <x-website::link class="text-green-600 hover:text-green-700 hover:underline" href="{{ route('filament.scheduledConference.pages.profile') }}">
+                                <x-tempest::link class="text-green-600 hover:text-green-700 hover:underline" href="{{ route('filament.scheduledConference.pages.profile') }}">
                                     {{ __('general.edit_my_profile') }}
-                                </x-website::link>
+                                </x-tempest::link>
                             </li>
                             <li>
-                                <x-website::link class="text-green-600 hover:text-green-700 hover:underline" href="{{ $homeUrl }}">
+                                <x-tempest::link class="text-green-600 hover:text-green-700 hover:underline" href="{{ $homeUrl }}">
                                     {{ __('general.continue_browsing') }}
-                                </x-website::link>
+                                </x-tempest::link>
                             </li>
                         </ul>
                     </div>
