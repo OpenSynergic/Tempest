@@ -1,6 +1,5 @@
 <x-tempest::layouts.main>
     <div class="space-y-8">
-        <x-scheduledConference::alert-scheduled-conference :scheduled-conference="$currentScheduledConference" />
         @if ($currentScheduledConference->hasMedia('cover')||$currentScheduledConference->getMeta('about')||$currentScheduledConference->getMeta('additional_content'))
         <section id="highlight" class="space-y-4">
             <div class="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 gap-4">
@@ -213,9 +212,25 @@
                             <div class="group bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100">
                                 <div class="relative">
                                     <div class="aspect-w-16 aspect-h-9">
-                                        <img src="{{ $imageUrl }}" 
-                                             alt="{{ $announcement->title }}"
-                                             class="w-full h-40 sm:h-48 object-cover transform group-hover:scale-105 transition duration-500">
+                                        <?php if($imageUrl): ?>
+                                            <img src="{{ $imageUrl }}" 
+                                                 alt="{{ $announcement->title }}"
+                                                 class="w-full h-40 sm:h-48 object-contain transform group-hover:scale-105 transition duration-500"
+                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <div class="hidden w-full h-40 sm:h-48 bg-gray-200 items-center justify-center">
+                                                <div class="metallic-container">
+                                                    <i class="fas fa-image metallic-icon"></i>
+                                                    <span class="metallic-text">Image Not Available</span>
+                                                </div>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="w-full h-40 sm:h-48 bg-gray-600 flex items-center justify-center">
+                                                <div class="metallic-container">
+                                                    <i class="fas fa-image metallic-icon"></i>
+                                                    <span class="metallic-text">Image Not Available</span>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="absolute top-0 right-0 mt-2 sm:mt-4 mr-2 sm:mr-4">
                                         @if($announcement->getMeta('important', false))

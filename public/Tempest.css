@@ -3417,3 +3417,36 @@
       padding: 0.75rem 1.75rem;
   }
 }
+
+.metallic-text {
+  background: linear-gradient(to bottom, #070707 0%, #989898 50%, #4b4a4a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 1.75rem;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+      background-position: 0;
+  }
+  100% {
+      background-position: 200px;
+  }
+}
+
+.metallic-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.metallic-icon {
+  color: #989898;
+  font-size: 2rem;
+}
