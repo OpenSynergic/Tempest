@@ -134,16 +134,4 @@ class TempestTheme extends Theme
 			'secondary_color' => $this->getSetting('secondary_color'),
         ];
     }
-
-    public function loadInformation()
-	{
-		return [
-			"name" => "Tempest Theme",
-			"folder" => "Tempest",
-			"author" => "QNF",
-			"description" => "Tema yang kece badai",
-			"version" => "1.0.0",
-			"type" => "theme",
-		];
-	}
 }
