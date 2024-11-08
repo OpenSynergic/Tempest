@@ -2598,7 +2598,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 531px) {
   .ssconf__media-container {
     width: 300px;
     height: 300px;
@@ -2756,7 +2756,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 531px) {
   .aca__media-container {
     width: 300px;
     height: 300px;
