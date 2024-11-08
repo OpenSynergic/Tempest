@@ -1,19 +1,10 @@
 <x-tempest::layouts.main>
     <div class="space-y-8">
-        @if ($currentScheduledConference->hasMedia('cover')||$currentScheduledConference->getMeta('about')||$currentScheduledConference->getMeta('additional_content'))
         <section id="highlight" class="space-y-4">
             <div class="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 gap-4">
                 <div class="flex flex-col gap-4 flex-1">
-                    @if ($currentScheduledConference->hasMedia('cover'))
-                        <div class="cf-cover">
-                            <img class="h-full"
-                                src="{{ $currentScheduledConference->getFirstMedia('cover')->getAvailableUrl(['thumb', 'thumb-xl']) }}"
-                                alt="{{ $currentScheduledConference->title }}" />
-                        </div>
-                    @endif
                     @php 
                     $layouts = App\Facades\Plugin::getPlugin('Tempest')->getSetting('layouts');
-                    
                     @endphp
                         <div class="contents-container">
                             @if ($layouts)
@@ -30,7 +21,6 @@
                 </div>
             </div>
         </section>
-        @endif
 
         @if ($currentScheduledConference?->speakers->isNotEmpty())
             <section id="speakers" class="py-12 bg-white">
