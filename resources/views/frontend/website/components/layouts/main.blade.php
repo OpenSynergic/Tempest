@@ -30,11 +30,15 @@
     if (timeLeft < 0) {
     clearInterval(countdownTimer);
     document.querySelector('.countdown-con').innerHTML = `
-        <div class="cd-passed p-3 text-center rounded-lg shadow-lg">
-            <h2 class="text-white text-5xl font-bold mb-4 animate__animated animate__fadeIn">Conference has passed!</h2>
-            <p class="text-gray-200 text-lg">Thank you for your interest!</p>
-        </div>
-    `;
+    <div class="cd-passed p-2 sm:p-3 text-center rounded-lg shadow-lg">
+        <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 animate__animated animate__fadeIn">
+            Conference has passed!
+        </h2>
+        <p class="text-gray-200 text-base sm:text-lg">
+            Thank you for your interest!
+        </p>
+    </div>
+`;
 }
 
 }
