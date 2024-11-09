@@ -1757,10 +1757,6 @@
       margin: 0.5rem 0;
   }
 
-  .banner-bg {
-    display: none;
-  }
-
   .navbar a {
     font-size: 18px;
   }
@@ -1917,6 +1913,11 @@
   
   .conference-image img {
     height: 250px;
+  }
+
+
+  .banner-bg {
+    display: none;
   }
 
   .info-card {
@@ -2101,7 +2102,12 @@
   }
   
   .conference-title {
-    margin-top: 55% !important;
+    margin-top: 65% !important;
+  }
+
+  .banner {
+    margin-top: -30% !important;
+    height: 945px; 
   }
 
 }
@@ -2113,11 +2119,20 @@
   }
   
   .banner {
-    margin-top: -24% !important;
+    margin-top: -30% !important;
+    max-height: 915px; 
   }
   
-  .conference-title {
-    margin-top: 55% !important;
+  .conference-title h1 {
+    margin-right: -5% !important;
+  }
+
+  .conference-title span {
+    font-size: 15px !important;
+  }
+
+  .conference-title p {
+    font-size: 15px !important;
   }
 
   #button2 {
@@ -2127,6 +2142,9 @@
   .banner {
     background-color: #5a5a5a;
   }
+  .conference-title {
+    margin-top: 70% !important;
+  }
 }
 
 @media (max-width: 320px) {
@@ -2135,23 +2153,33 @@
     margin: 0 0 0 ; 
   }
 
+  .conference-title span {
+    font-size: 12px !important;
+  }
+
+  .conference-title p {
+    font-size: 12px !important;
+  }
+
+  .navbar-starts a {
+    font-size: 12px !important;
+  }
+
   .banner-image {
     display: none;
-  }
-    /* .banner-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 18 / 32 !important;
-    object-fit: cover;
-  } */
+  } 
 
   .banner {
-    margin-top: -27.5% !important;
-    height: 915px;
+    margin-top: -33.5% !important;
+    height: 880px;
   }
 
   .conference-title {
-    margin-top: 60% !important;
+    margin-top: 70% !important;
+  }
+
+  .conference-title h1 {
+    font-size: 22px;
   }
 
   .topic-item h3{
@@ -3297,8 +3325,7 @@
 }
 
 .acp-journal-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
@@ -3384,6 +3411,10 @@
 
   .acp-hero p {
       font-size: 0.9rem;
+  }
+
+  .acp-journal-tags {
+    grid-template-columns: 1fr 1fr;
   }
 
   .acp-container {
