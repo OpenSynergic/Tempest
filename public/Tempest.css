@@ -1042,9 +1042,10 @@
   font-size: 0.9rem;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
   .conf_container {
       flex-direction: column;
+      padding: 4rem;
   }
 
   .conf_left_section {
@@ -1063,7 +1064,7 @@
 
 @media (max-width: 480px) {
   .conf_container {
-      padding: 1rem;
+      padding: 2rem;
   }
 
   .conf_main_title {
