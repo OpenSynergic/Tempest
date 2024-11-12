@@ -1078,7 +1078,7 @@
       text-align: center;
   }
 }
-/* Topics section */
+
 .wrapper {
     max-width: 1200px;
     margin: 15% auto;
@@ -3327,6 +3327,7 @@
 .acp-journal-tags {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   margin-top: 2rem;
 }
@@ -3377,10 +3378,28 @@
   margin-bottom: 1rem;
 }
 
+
+@media (max-width: 1024px) {
+  .acp-benefit-card:nth-child(3) {
+    grid-column: span 2;
+  }  
+}
+
+@media (max-width: 982px) {
+  .acp-journal-tags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .acp-hero h1 {
       font-size: 2.5rem;
+  }
+
+  .acp-journal-tags {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .acp-hero p {
@@ -3404,17 +3423,29 @@
   }
 }
 
+@media (max-width: 679px) {
+  .acp-benefit-card:nth-child(3) {
+    grid-column: span 1;
+  } 
+}
+
+@media (max-width: 499px) {
+  .acp-journal-tags {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
   .acp-hero h1 {
       font-size: 2rem;
   }
 
+  .acp-benefit-card:nth-child(3) {
+    grid-column: span 1;
+  }  
+
   .acp-hero p {
       font-size: 0.9rem;
-  }
-
-  .acp-journal-tags {
-    grid-template-columns: 1fr 1fr;
   }
 
   .acp-container {
