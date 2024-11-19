@@ -19,12 +19,12 @@
     @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
     <div class="conference-title relative z-10 flex flex-col text-white p-4 md:p-8 lg:p-12 xl:p-16 -mt-[4%] ml-[2%]">
         <!-- Conference Title -->
-        <h1 class="animate-slideUp delay-100 text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-shadow-lg -mt-[28%] mr-[48%] md:mr-[30%] lg:mr-[40%] text-white z-20">
+        <h1 id="conference-title" class="animate-slideUp delay-100 text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-16 text-shadow-lg -mt-[28%] mr-[48%] md:mr-[30%] lg:mr-[40%] text-white z-20">
             {{ $currentScheduledConference->title ?? 'Conference Title' }}
-        </h1>
+        </h1>        
         
         <!-- Date Information -->
-        <p class="animate-slideUp delay-200 text-lg md:text-xl lg:text-2xl mb-6 opacity-90 flex items-center backdrop-blur-sm bg-black/10 rounded-lg px-4 py-2 w-fit">
+        <p class="animate-slideUp delay-200 text-lg md:text-xl lg:text-2xl mb-10 opacity-90 flex items-center backdrop-blur-sm bg-black/10 rounded-lg px-4 py-2 w-fit">
             @if($currentScheduledConference->date_start)
             <svg class="w-6 h-6 inline-block mr-3 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m4 4H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"></path>
@@ -189,3 +189,19 @@
 .delay-800 { animation-delay: 0.8s; }
 .delay-900 { animation-delay: 0.9s; }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const titleElement = document.getElementById("conference-title");
+        
+        const lineHeight = parseFloat(getComputedStyle(titleElement).lineHeight);
+        const elementHeight = titleElement.offsetHeight;
+
+        const numberOfLines = Math.round(elementHeight / lineHeight);
+
+        if (numberOfLines > 1) {
+            titleElement.classList.remove("mb-16");
+            titleElement.classList.add("mb-4");
+        }
+    });
+</script>
