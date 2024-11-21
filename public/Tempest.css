@@ -108,6 +108,7 @@
 
 .banner-register {
   color: oklch(var(--primary-color)) !important;
+  color: oklch(var(--primary-color)) !important;
 }
 
 .cd-passed {
