@@ -1,4 +1,4 @@
-<x-z::layouts.main>
+<x-website::layouts.main>
     <div class="space-y-5">
         @if ($site->getMeta('about'))
             <div class="description user-content">
@@ -254,4 +254,4 @@
             </div>
         </div>
     </div>
-</x-tempest::layouts.main>
+</x-website::layouts.main>
