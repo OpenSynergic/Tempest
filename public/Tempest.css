@@ -258,6 +258,7 @@
 /* Text content styles */
 .text {
   padding: 1rem;
+  text-align: justify;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   margin-top: 2rem;
@@ -975,6 +976,7 @@
 .conf_description {
   color: black;
   margin-bottom: 2rem;
+  text-align: justify;
   line-height: 1.6;
 }
 
