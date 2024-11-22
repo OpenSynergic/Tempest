@@ -1411,7 +1411,7 @@
   .banner-image {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: 16 / 8 !important;
     object-fit: cover;
   }
 }
