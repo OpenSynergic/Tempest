@@ -51,6 +51,10 @@ class TempestTheme extends Theme
                 ->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
                 ->label(__('Secondary Color'))
                 ->hint('Secondary color for the border and color for the gradient.'),
+            ColorPicker::make('text_color')
+                ->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
+                ->label(__('Banner Title Color'))
+                ->hint('Pick a color for the banner title.'), 
             Builder::make('layouts')
                 ->collapsible()
                 ->collapsed()
@@ -97,6 +101,11 @@ class TempestTheme extends Theme
                 $cssGenerator->root_variable('secondary-color', value: "{$oklchBorder->lightness}% {$oklchBorder->chroma} {$oklchBorder->hue}");
             }
 
+            if ($textColor = $this->getSetting('text_color')) {
+                $oklchText = ColorFactory::new($textColor)->to(ColorSpace::OkLch);
+                $cssGenerator->root_variable('text-color', value: "{$oklchText->lightness}% {$oklchText->chroma} {$oklchText->hue}");
+            }
+
             $output .= <<<HTML
             <style>
                 {$cssGenerator->get_output()}
@@ -130,6 +139,7 @@ class TempestTheme extends Theme
             'layouts' => $this->getSetting('layouts'),
             'appearance_color' => $this->getSetting('appearance_color'),
             'secondary_color' => $this->getSetting('secondary_color'),
+            'text_color' => $this->getSetting('text_color'),
         ];
     }
 }
