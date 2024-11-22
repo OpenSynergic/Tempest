@@ -151,8 +151,6 @@
 
 /* Container styles */
 .history-container {
-  margin-left: 15%;
-  margin-right: 15%;
   margin-bottom: 15% !important;
   position: relative;
   overflow: hidden;
@@ -168,7 +166,7 @@
 
 /* Title styles */
 .title-history {
-  font-size: 1.75rem;
+  font-size: 26PX;
   font-weight: 800;
   color: oklch(var(--primary-color));
   text-align: center;
@@ -259,7 +257,7 @@
 
 /* Text content styles */
 .text {
-  padding: 2rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   margin-top: 2rem;
@@ -1085,13 +1083,12 @@
 
 @media (max-width: 480px) {
   .conf_container {
-      padding: 3rem;
+      padding: 1rem;
   }
 
   .conf_main_title {
       font-size: 2rem;
   }
-
   .conf_buttons_wrapper {
       flex-direction: column;
   }
