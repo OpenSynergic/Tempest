@@ -22,16 +22,13 @@
 
             <div class="p-8">
                 @if (!$registerComplete)
-                    @if (Setting::get('allow_registration'))
-                        <form wire:submit='register' class="space-y-6">
-                            @error('throttle')
-                                <div class="p-4 rounded-lg bg-red-50 border border-red-100 text-sm text-red-600 flex items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                                    </svg>
-                                    <p>{{ $message }}</p>
-                                </div>
-                            @enderror
+                    @if ($allowRegistration)
+                    <form wire:submit='register' class="space-y-4">
+                        @error('throttle')
+                            <div class="text-sm text-red-600">
+                                {{ $message }}
+                            </div>
+                        @enderror
 
                             <div class="grid gap-6 sm:grid-cols-2">
                                 <div class="space-y-2">
