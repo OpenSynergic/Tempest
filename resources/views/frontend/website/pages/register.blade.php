@@ -142,6 +142,33 @@
                             </div>
 
                             <div class="space-y-2">
+                                    <label class="block text-sm font-medium text-gray-700">
+                                        {{ __('general.phone') }}
+                                    </label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M2.7 2.3c.2-.2.5-.3.7-.3h3.4c.4 0 .7.3.7.7 0 1.2.2 2.3.7 3.3.1.3 0 .6-.2.8L6.4 8.5c1.1 2.2 2.8 3.9 5 5l1.7-1.7c.2-.2.5-.3.8-.2 1 .4 2.1.7 3.3.7.4 0 .7.3.7.7v3.4c0 .3-.1.5-.3.7s-.4.3-.7.3c-4.3 0-8.3-1.7-11.3-4.7S2 6.9 2 2.6c0-.3.1-.5.3-.7z"/>
+                                        </svg>                                          
+                                    </div>
+                                    <input 
+                                        type="tel" 
+                                        class="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-colors" 
+                                        wire:model="phone" 
+                                    />
+                                </div>
+                                    @error('phone')
+                                        <p class="text-sm text-red-600 flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                                {{ $message }}
+                                            </p>
+                                    @enderror
+                                    <p class="text-xs text-gray-500">{{ __('general.phone_format_international') }}</p>
+                            </div>
+
+                            <div class="space-y-2">
                                 <label class="block text-sm font-medium text-gray-700">
                                     {{ __('general.email') }} <span class="text-red-500">*</span>
                                 </label>
@@ -155,7 +182,7 @@
                                     <input 
                                         type="email" 
                                         wire:model="email"
-                                        class="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2  focus:ring-green-500/20 focus:border-green-500 transition-colors" 
+                                        class="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-colors" 
                                         required
                                     />
                                 </div>
