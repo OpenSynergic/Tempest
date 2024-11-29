@@ -147,9 +147,8 @@
                                         {{ __('general.phone') }}
                                     </label>
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M2.7 2.3c.2-.2.5-.3.7-.3h3.4c.4 0 .7.3.7.7 0 1.2.2 2.3.7 3.3.1.3 0 .6-.2.8L6.4 8.5c1.1 2.2 2.8 3.9 5 5l1.7-1.7c.2-.2.5-.3.8-.2 1 .4 2.1.7 3.3.7.4 0 .7.3.7.7v3.4c0 .3-.1.5-.3.7s-.4.3-.7.3c-4.3 0-8.3-1.7-11.3-4.7S2 6.9 2 2.6c0-.3.1-.5.3-.7z"/>
                                         </svg>
                                     </div>
                                     <input 
