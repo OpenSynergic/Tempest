@@ -28,6 +28,10 @@
   color: oklch(var(--text-color)) !important;
 }
 
+.background-color {
+  background-color: oklch(var(--text-color)) !important;
+}
+
 .group:hover h2 a {
   color: oklch(var(--primary-color));
   text-decoration-color: oklch(var(--primary-color));
