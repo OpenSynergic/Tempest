@@ -11,7 +11,7 @@
                         <div class="space-y-2 flex-grow">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold pb-2 sm:pb-3 md:pb-5">
                                 <span class="bg-clip-text text-transparent">
-                                    Event Tim
+                                    Event Timelines
                                 </span>
                             </h1>
                             <p class="text-gray-500 text-sm sm:text-base md:text-lg">
