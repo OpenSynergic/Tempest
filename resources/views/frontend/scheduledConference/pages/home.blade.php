@@ -55,7 +55,7 @@
                                 <div class="items-center justify-center gap-6 sm:gap-8 md:gap-12 flex flex-wrap">
                                     @foreach ($role->speakers as $speaker)
                                     <div class="w-full max-w-xs">
-                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 h-[410px] flex flex-col">
+                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 md:h-[410px] flex flex-col">
                                             <div class="relative mb-4 sm:mb-5 md:mb-6 flex justify-center">
                                                 <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40">
                                                     <img class="w-full h-full rounded-full object-cover shadow-lg border-2 sm:border-3 md:border-4 border-white ring-2 sm:ring-3 md:ring-4 ring-gray-100 group-hover:ring-indigo-300 transition-all duration-300"
