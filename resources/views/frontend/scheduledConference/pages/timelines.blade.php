@@ -11,7 +11,7 @@
                         <div class="space-y-2 flex-grow">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold pb-2 sm:pb-3 md:pb-5">
                                 <span class="bg-clip-text text-transparent">
-                                    Event Timelines
+                                    Event Tim
                                 </span>
                             </h1>
                             <p class="text-gray-500 text-sm sm:text-base md:text-lg">
@@ -29,14 +29,18 @@
                 </div>
 
                 @if($timelines->isNotEmpty())
-                <div class="timeline-container space-y-8">
+                <div class="timeline-container relative space-y-8">
+                   
+                    <div class="absolute top-0 bottom-0 left-1/2 transform w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                    
                     @foreach ($timelines as $index => $timeline)
                     <div class="timeline-item relative pb-8 group">
-                        <div class="absolute top-0 bottom-0 left-1/2 transform 
-                        w-0.5 bg-gray-200 dark:bg-gray-700"></div>
-
-                        
-                        <div class="ml-4 mr-4 sm:ml-24 sm:mr-24">
+                       
+                        <div class="ml-8 mr-8 sm:ml-24 sm:mr-24 relative">
+                            <div class="absolute -left-[calc(50%+1rem)] sm:-left-[calc(50%+3rem)] top-0 
+                                w-4 h-4 bg-white border-2 border-blue-500 rounded-full 
+                                z-20 transform -translate-x-1/2 translate-y-1/2"></div>
+                            
                             <div class="bg-white rounded-xl border border-gray-100 shadow-md 
                                 hover:shadow-xl transition-all duration-300 ease-in-out 
                                 overflow-hidden relative">
@@ -45,7 +49,6 @@
                                     opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                                 <div class="p-5 sm:p-6 space-y-3 relative z-10">
-                                   
                                     <div class="flex justify-between items-start">
                                         <time class="text-xs sm:text-sm font-medium text-gray-600
                                             bg-blue-50 px-3 py-1 rounded-full whitespace-nowrap">
@@ -55,7 +58,7 @@
 
                                     <div class="space-y-2">
                                         <h3 class="text-lg sm:text-xl font-bold text-gray-900 
-                                             transition-colors">
+                                            transition-colors">
                                             {{ $timeline->name }}
                                         </h3>
                                         <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
