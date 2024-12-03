@@ -42,8 +42,8 @@
                         <div class="space-y-12 sm:space-y-16 md:space-y-20">
                             @foreach ($currentScheduledConference->speakerRoles as $role)
                             @if ($role->speakers->isNotEmpty())
-                            <div class="speak-title bg-white rounded-2xl sm:rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-6 sm:p-8 md:p-12 transform hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500">
-                                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-12 md:mb-16 flex items-center justify-center text-gray-900">
+                            <div class="speak-title bg-white rounded-2xl sm:rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-6 sm:p-8 md:p-2 lg:p-16 transform hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500">
+                                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-12 md:mb-16 flex items-center justify-center text-gray-900 md:mt-8 lg:mt-2">
                                     <span class="relative">
                                         {{ $role->name }}
                                         <span class="garis absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5"></span>
@@ -55,7 +55,7 @@
                                 <div class="items-center justify-center gap-6 sm:gap-8 md:gap-12 flex flex-wrap">
                                     @foreach ($role->speakers as $speaker)
                                     <div class="w-full max-w-xs">
-                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 md:h-[410px] flex flex-col">
+                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 md:mb-8 transition duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 md:h-[410px] flex flex-col">
                                             <div class="relative mb-4 sm:mb-5 md:mb-6 flex justify-center">
                                                 <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40">
                                                     <img class="w-full h-full rounded-full object-cover shadow-lg border-2 sm:border-3 md:border-4 border-white ring-2 sm:ring-3 md:ring-4 ring-gray-100 group-hover:ring-indigo-300 transition-all duration-300"
