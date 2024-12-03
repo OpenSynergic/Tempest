@@ -54,20 +54,46 @@
                                 </h2>
                                 <div class="items-center justify-center gap-6 sm:gap-8 md:gap-12 flex flex-wrap">
                                     @foreach ($role->speakers as $speaker)
-                                    <div class="group w-full sm:w-1/2 md:w-auto max-w-xs">
-                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition duration-500 transform group-hover:-translate-y-2 group-hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100">
-                                            <div class="relative mb-4 sm:mb-5 md:mb-6">
-                                                <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto">
-                                                    <img class="w-full h-full rounded-full object-cover shadow-lg border-2 sm:border-3 md:border-4 border-white ring-2 sm:ring-3 md:ring-4 ring-gray-100 group-hover:ring-gray-200 transition-all duration-300"
+                                    <div class="w-full max-w-xs">
+                                        <div class="bg-gradient-to-b from-white to-gray-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition duration-500 transform hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 h-[410px] flex flex-col">
+                                            <div class="relative mb-4 sm:mb-5 md:mb-6 flex justify-center">
+                                                <div class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40">
+                                                    <img class="w-full h-full rounded-full object-cover shadow-lg border-2 sm:border-3 md:border-4 border-white ring-2 sm:ring-3 md:ring-4 ring-gray-100 group-hover:ring-indigo-300 transition-all duration-300"
                                                         src="{{ $speaker->getFilamentAvatarUrl() }}"
                                                         alt="{{ $speaker->fullName }}" />
                                                 </div>
                                             </div>
-                                            <div class="text-center">
-                                                <h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">{{ $speaker->fullName }}</h4>
-                                                @if ($speaker->getMeta('affiliation'))
-                                                <p class="text-xs sm:text-sm text-gray-600 px-2 sm:px-3 md:px-4 leading-relaxed">{{ $speaker->getMeta('affiliation') }}</p>
-                                                @endif
+                                            <div class="text-center flex-grow flex flex-col justify-between">
+                                                <div>
+                                                    <h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">{{ $speaker->fullName }}</h4>
+                                                    @if ($speaker->getMeta('affiliation'))
+                                                    <p class="text-xs sm:text-sm text-gray-600 px-2 sm:px-3 md:px-4 leading-relaxed mb-3">{{ $speaker->getMeta('affiliation') }}</p>
+                                                    @endif
+                                                </div>
+                                                @if($speaker->getMeta('scopus_url') || $speaker->getMeta('google_scholar_url') || $speaker->getMeta('orcid_url'))
+                                                <div class="flex justify-center items-center space-x-4 pt-4 border-t border-gray-100">
+                                                    @if($speaker->getMeta('orcid_url'))
+                                                    <a href="{{ $speaker->getMeta('orcid_url') }}" target="_blank" 
+                                                        class="text-lime-600 hover:text-lime-700 transition-all duration-300 transform hover:-translate-y-1">
+                                                        <x-academicon-orcid class="w-7 h-7 opacity-80 hover:opacity-100" />
+                                                    </a>
+                                                    @endif
+                                
+                                                    @if($speaker->getMeta('google_scholar_url'))
+                                                    <a href="{{ $speaker->getMeta('google_scholar_url') }}" target="_blank" 
+                                                        class="text-blue-600 hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-1">
+                                                        <x-academicon-google-scholar class="w-7 h-7 opacity-80 hover:opacity-100" />
+                                                    </a>
+                                                    @endif
+                                
+                                                    @if($speaker->getMeta('scopus_url'))
+                                                    <a href="{{ $speaker->getMeta('scopus_url') }}" target="_blank" 
+                                                        class="text-orange-600 hover:text-orange-700 transition-all duration-300 transform hover:-translate-y-1">
+                                                        <x-academicon-scopus class="w-7 h-7 opacity-80 hover:opacity-100" />
+                                                    </a>
+                                                    @endif
+                                                </div>
+                                            @endif
                                             </div>
                                         </div>
                                     </div>
