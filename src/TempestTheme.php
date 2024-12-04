@@ -101,6 +101,7 @@ class TempestTheme extends Theme
     {
         Hook::add('Frontend::Views::Head', function ($hookName, &$output) {
             $output .= '<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>';
+            $output .= '<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />';
 
             $cssTempest = $this->url('Tempest.css');
             $output .= "<link rel='stylesheet' type='text/css' href='$cssTempest'>";
