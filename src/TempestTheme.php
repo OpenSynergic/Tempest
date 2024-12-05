@@ -10,6 +10,7 @@ use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use luizbills\CSS_Generator\Generator as CSSGenerator;
 use matthieumastadenis\couleur\ColorFactory;
 use matthieumastadenis\couleur\ColorSpace;
@@ -32,6 +33,9 @@ class TempestTheme extends Theme
     public function getFormSchema(): array
     {
         return [
+            Toggle::make('global_navigation')
+            ->default(true),
+            ->hint('Turn On/Off Global Navigation.'),
             SpatieMediaLibraryFileUpload::make('banner')
                 ->collection('tempest-banner')
                 ->label('Upload Banner Images')
@@ -101,6 +105,7 @@ class TempestTheme extends Theme
     {
         Hook::add('Frontend::Views::Head', function ($hookName, &$output) {
             $output .= '<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>';
+            $output .= '<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />';
 
             $cssTempest = $this->url('Tempest.css');
             $output .= "<link rel='stylesheet' type='text/css' href='$cssTempest'>";
@@ -160,8 +165,9 @@ class TempestTheme extends Theme
             'text_color' => $this->getSetting('text_color'),
             'button_first' => $this->getSetting('button_first'),
             'button_second' => $this->getSetting('button_second'),
-            'button_first_text' => $this->getSetting('button_first_text'), // Add this line
-            'button_second_text' => $this->getSetting('button_second_text'), // Add this line
+            'button_first_text' => $this->getSetting('button_first_text'), 
+            'button_second_text' => $this->getSetting('button_second_text'), 
+            'global_navigation' => $this->getSetting('global_navigation'),
         ];
     }
 }
