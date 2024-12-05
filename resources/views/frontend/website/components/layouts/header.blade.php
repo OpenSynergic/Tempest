@@ -1,8 +1,10 @@
 @php
     $primaryNavigationItems = app()->getNavigationItems('primary-navigation-menu');
     $userNavigationMenu = app()->getNavigationItems('user-navigation-menu');
+    $isGlobalNavigationEnabled = App\Facades\Plugin::getPlugin('Tempest')->getSetting('global_navigation')
 @endphp
 
+@if($isGlobalNavigationEnabled)
 <div class="navbar-publisher navbar-container bg-white shadow z-[51] text-gray-800">
     <div class="navbar mx-auto max-w-7xl items-center h-full">
         <div class="navbar-start items-center gap-x-4 w-max">
@@ -19,6 +21,8 @@
     </div>
 </div>
     
+@endif
+
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
     <div id="navbar" class="navbar-container bg-primary sticky top-0 text-white shadow z-50">
         <div class="backdrop-blur-md py-5 transition-all duration-100">
@@ -30,6 +34,13 @@
                 <div class="navbar-end hidden lg:flex relative z-10 w-max">
                     <x-website::navigation-menu :items="$primaryNavigationItems" />
                 </div>
+                @if(!$isGlobalNavigationEnabled)
+                <div class="user-nav flex items-center">
+                    <x-tempest::navigation-menu 
+                        :items="$userNavigationMenu"
+                        class="flex items-center gap-4" />
+                </div>
+                @endif
             </div>
         </div>
         
