@@ -34,7 +34,7 @@ class TempestTheme extends Theme
     {
         return [
             Toggle::make('global_navigation')
-            ->default(true),
+            ->default(true)
             ->hint('Turn On/Off Global Navigation.'),
             SpatieMediaLibraryFileUpload::make('banner')
                 ->collection('tempest-banner')
