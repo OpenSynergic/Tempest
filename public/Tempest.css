@@ -925,12 +925,16 @@
 .conf_left_section {
   flex: 1;
   max-width: 500px;
+  margin-top: 5%;
+  margin-bottom: 5%;
   margin-right: 5%;
 }
 
 .conf_right_section {
   flex: 1;
   display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
