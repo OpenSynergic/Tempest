@@ -1,7 +1,7 @@
 <x-tempest::layouts.main>
     <div class="container mx-auto px-4 py-12">
         <div class="mb-8">
-            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="breadcrumbs text-sm bg-white rounded-lg shadow-sm px-4 py-3 font-medium" />
+        <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-xs sm:text-sm bg-white rounded-lg shadow-sm px-2 sm:px-4 py-2 sm:py-3 font-medium overflow-x-auto" />
         </div>
         <div class="flex mb-10 space-x-4 items-center">
             <h1 class="text-4xl font-extrabold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">List Committee</h1>

@@ -3,7 +3,7 @@
         <div class="container mx-auto px-4 max-w-6xl space-y-6">
             <nav class="bg-white rounded-lg shadow-sm">
                 <div class="mb-8">
-                    <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="breadcrumbs text-sm bg-white rounded-lg shadow-sm px-4 py-3 font-medium" />
+                <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-xs sm:text-sm bg-white rounded-lg shadow-sm px-2 sm:px-4 py-2 sm:py-3 font-medium overflow-x-auto" />
                 </div>
             </nav>
         <header class="bg-white rounded-xl p-6 shadow-sm drop-shadow-2xl border border-gray-100">
