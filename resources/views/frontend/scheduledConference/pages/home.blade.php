@@ -232,7 +232,7 @@
                                             <?php if($imageUrl): ?>
                                                 <img src="{{ $imageUrl }}" 
                                                     alt="{{ $announcement->title }}"
-                                                    class="w-full h-40 sm:h-48 object-contain transform group-hover:scale-105 transition duration-500"
+                                                    class="w-full h-40 sm:h-48 object-cover object-center transform group-hover:scale-105 transition duration-500"
                                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                                 <div class="hidden w-full h-40 sm:h-48 bg-gray-200 items-center justify-center">
                                                     <div class="metallic-container">
