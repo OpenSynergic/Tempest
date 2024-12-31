@@ -199,7 +199,6 @@
                                         Latest Updates
                                     </span>
                                 </div>
-                                <p class="mt-1 sm:mt-2 text-gray-600 text-xs sm:text-sm">Stay updated with our latest announcements</p>
                             </div>
                             
                             <a href="{{ route('livewirePageGroup.scheduledConference.pages.announcements') }}" 
@@ -284,7 +283,7 @@
                                         <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100">
                                             <a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
                                             class="read-full-ann inline-flex items-center font-medium text-sm group/link">
-                                                Read full announcement
+                                                Read full
                                                 <svg class="ml-1.5 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 transform group-hover/link:translate-x-1 transition-transform duration-200" 
                                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
