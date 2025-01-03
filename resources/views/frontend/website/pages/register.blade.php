@@ -83,7 +83,36 @@
                                         </p>
                                     @enderror
                                 </div>
+                            </div>
 
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-700">
+                                    {{ __('general.public_name') }}
+                                </label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <input 
+                                        type="text" 
+                                        wire:model="public_name"
+                                        class="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-colors" 
+                                    />
+                                </div>
+                                @error('public_name')
+                                    <p class="text-sm text-red-600 flex items-center gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                        </svg>
+                                        {{ $message }}
+                                    </p>
+                                @enderror
+                                <p class="text-xs text-gray-500">{{ __('general.public_name_helper') }}</p>
+                            </div>
+
+                            <div class="grid gap-6 sm:grid-cols-2">
                                 <div class="space-y-2">
                                     <label class="block text-sm font-medium text-gray-700">
                                         {{ __('general.affiliation') }}
