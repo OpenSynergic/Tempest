@@ -28,50 +28,199 @@
                 </div>
 
                
-                <div class="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
-                    <div class="user-content max-w-4xl mx-auto">
-                        @if($publisherLibraries->isNotEmpty())
-                            <ul class="divide-y divide-gray-100">
-                                @foreach($publisherLibraries as $media)
-                                    <li class="group">
-                                        <a href="{{ route(App\Frontend\ScheduledConference\Pages\PublisherLibraryDownload::getRouteName(), ['media' => $media->uuid]) }}"
-                                        class="flex flex-col sm:flex-row items-start sm:items-center py-4 sm:py-6 px-3 sm:px-4 -mx-3 sm:-mx-4 rounded-lg hover:bg-gray-50 transition-all duration-200 gap-4 sm:gap-6">
-                                            <div class="flex-shrink-0">
-                                                <div class="p-2 sm:p-3 bg-primary-50 rounded-lg sm:rounded-xl group-hover:bg-primary-100 transition-colors">
-                                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="flex-1 min-w-0 w-full">
-                                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
-                                                    <span class="text-sm sm:text-base font-medium text-gray-900 break-all sm:truncate group-hover:text-primary-600 transition-colors">
-                                                        {{ $media->name }}
-                                                    </span>
-                                                    <span class="flex-shrink-0">
-                                                        <span class="inline-flex items-center px-2.5 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm font-medium text-primary-700 bg-primary-50 rounded-full group-hover:bg-primary-100 transition-colors">
-                                                            Download
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @else 
-                            <div class="text-center py-8 sm:py-12 lg:py-16">
-                                <div class="bg-gray-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-lg mx-auto">
-                                    <svg class="mx-auto h-12 sm:h-16 w-12 sm:w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-                                    </svg>
-                                    <p class="mt-4 sm:mt-6 text-base sm:text-lg font-medium text-gray-500">
-                                        {{ __('general.no_publisher_library_available') }}
-                                    </p>
-                                </div>
+                <div class="library-container">
+                    @if($publisherLibraries->isNotEmpty())
+                        <ul class="library-list">
+                            @foreach($publisherLibraries as $media)
+                                <li class="library-item">
+                                    <a href="{{ route(App\Frontend\ScheduledConference\Pages\PublisherLibraryDownload::getRouteName(), ['media' => $media->uuid]) }}" 
+                                       class="library-link">
+                                        <div class="icon-wrapper">
+                                            <svg class="download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="content-wrapper">
+                                            <span class="media-name">{{ $media->name }}</span>
+                                            <span class="download-badge">Download</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <div class="empty-state">
+                            <div class="empty-state-content">
+                                <svg class="empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                                </svg>
+                                <p class="empty-text">{{ __('general.no_publisher_library_available') }}</p>
                             </div>
-                        @endif
-                    </div>
+                        </div>
+                    @endif
+                </div>
+                
+                <style>
+                .library-container {
+                    max-width: 64rem;
+                    margin: 0 auto;
+                    padding: 1rem;
+                    background: white;
+                    border-radius: 0.75rem;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                }
+                
+                .library-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    border-radius: 0.5rem;
+                }
+                
+                .library-item {
+                    border-bottom: 1px solid #f3f4f6;
+                }
+                
+                .library-item:last-child {
+                    border-bottom: none;
+                }
+                
+                .library-link {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem;
+                    gap: 1rem;
+                    text-decoration: none;
+                    transition: background-color 0.2s;
+                    border-radius: 0.5rem;
+                }
+                
+                .library-link:hover {
+                    background-color: #f9fafb;
+                }
+                
+                .icon-wrapper {
+                    flex-shrink: 0;
+                    padding: 0.75rem;
+                    background-color: #eef2ff;
+                    border-radius: 0.5rem;
+                    transition: background-color 0.2s;
+                }
+                
+                .library-link:hover .icon-wrapper {
+                    background-color: #e0e7ff;
+                }
+                
+                .download-icon {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    color: #4f46e5;
+                }
+                
+                .content-wrapper {
+                    flex: 1;
+                    min-width: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                }
+                
+                .media-name {
+                    font-size: 0.975rem;
+                    font-weight: 500;
+                    color: #111827;
+                    word-break: break-word;
+                    transition: color 0.2s;
+                }
+                
+                .library-link:hover .media-name {
+                    color: #4f46e5;
+                }
+                
+                .download-badge {
+                    flex-shrink: 0;
+                    padding: 0.375rem 0.75rem;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    color: #4f46e5;
+                    background-color: #eef2ff;
+                    border-radius: 9999px;
+                    transition: background-color 0.2s;
+                }
+                
+                .library-link:hover .download-badge {
+                    background-color: #e0e7ff;
+                }
+                
+                .empty-state {
+                    padding: 3rem 1rem;
+                }
+                
+                .empty-state-content {
+                    max-width: 32rem;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    background-color: #f9fafb;
+                    border-radius: 1rem;
+                    text-align: center;
+                }
+                
+                .empty-icon {
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 auto;
+                    color: #9ca3af;
+                }
+                
+                .empty-text {
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: #6b7280;
+                }
+                
+                @media (max-width: 640px) {
+                    .library-container {
+                        padding: 0.75rem;
+                    }
+                    
+                    .library-link {
+                        padding: 0.75rem;
+                    }
+                    
+                    .icon-wrapper {
+                        padding: 0.5rem;
+                    }
+                    
+                    .download-icon {
+                        width: 1.25rem;
+                        height: 1.25rem;
+                    }
+                    
+                    .media-name {
+                        font-size: 0.875rem;
+                    }
+                    
+                    .download-badge {
+                        padding: 0.25rem 0.625rem;
+                        font-size: 0.75rem;
+                    }
+                    
+                    .empty-state {
+                        padding: 2rem 0.75rem;
+                    }
+                    
+                    .empty-icon {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
+                    
+                    .empty-text {
+                        font-size: 0.875rem;
+                    }
+                }
+                </style>
                 </div>
         </main>
     </div>
