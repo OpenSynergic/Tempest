@@ -211,12 +211,12 @@
                         </div>
                         
                         <div class="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                            @php
-                                $latestAnnouncements = $currentScheduledConference->announcements
-                                ->where('expires_at', '>', now()->startOfDay())
+                        @php
+                            $latestAnnouncements = $currentScheduledConference->announcements
                                 ->sortByDesc('created_at')
                                 ->take(3);
-                            @endphp
+                        @endphp
+
                 
                             @forelse ($latestAnnouncements as $announcement)
                                 @php
