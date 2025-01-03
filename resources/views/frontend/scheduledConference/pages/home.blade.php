@@ -214,11 +214,12 @@
                         @php
                             $latestAnnouncements = $currentScheduledConference->announcements
                                 ->filter(function ($announcement) {
-                                    return $announcement->expires_at > now();
+                                    return is_null($announcement->expires_at) || $announcement->expires_at > now();
                                 })
                                 ->sortByDesc('created_at')
                                 ->take(3);
                         @endphp
+                        
 
 
                 
