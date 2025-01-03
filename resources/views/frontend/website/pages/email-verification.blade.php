@@ -1,7 +1,9 @@
 <x-tempest::layouts.main>
-    <div class="mb-6">
-        <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
-    </div>
+    <nav class="bg-white rounded-lg shadow-sm">
+        <div class="mb-8">
+        <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-xs sm:text-sm bg-white rounded-lg shadow-sm px-2 sm:px-4 py-2 sm:py-3 font-medium overflow-x-auto" />
+        </div>
+    </nav>
     <div class="relative">
         <div class="flex mb-5 space-x-4">
             <h1 class="text-xl font-semibold min-w-fit flex gap-2 items-center"><x-heroicon-s-envelope class="h-5 w-5" /> Verify your email </h1>

@@ -1,8 +1,10 @@
 <x-tempest::layouts.main class="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-green-50 py-12">
     <div class="container mx-auto px-4 max-w-lg">
-        <div class="mb-8">
-            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="breadcrumbs text-sm bg-white rounded-lg shadow-sm px-4 py-3 font-medium" />
-        </div>
+        <nav class="bg-white rounded-lg shadow-sm">
+            <div class="mb-8">
+            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-xs sm:text-sm bg-white rounded-lg shadow-sm px-2 sm:px-4 py-2 sm:py-3 font-medium overflow-x-auto" />
+            </div>
+        </nav>
 
         <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
             <div class="reglog-head relative px-8 pt-8 pb-6">

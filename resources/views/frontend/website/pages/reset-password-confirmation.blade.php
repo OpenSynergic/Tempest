@@ -1,10 +1,12 @@
 <x-tempest::layouts.main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
     <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
 
-        <div class="mb-6">
-            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
-        </div>
-
+        <nav class="bg-white rounded-lg shadow-sm">
+            <div class="mb-8">
+            <x-tempest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-xs sm:text-sm bg-white rounded-lg shadow-sm px-2 sm:px-4 py-2 sm:py-3 font-medium overflow-x-auto" />
+            </div>
+        </nav>
+        
         <div class="max-w-md mx-auto">
             <div class="bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden transition-all duration-300">
                 <div class="px-6 py-8 bg-gradient-to-r from-primary-500 to-primary-600">
