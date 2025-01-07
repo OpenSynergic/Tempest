@@ -286,10 +286,7 @@
 
 /* Button styles */
 .history-btn {
-  display: inline-block;
-  width: 180px;
-  height: 15px;
-  padding: 10px 20px 45px;
+  padding: 1rem 2rem;
   margin-top: 5%;
   background: linear-gradient(135deg, oklch(var(--primary-color)) 0%, oklch(var(--secondary-color)));
   color: white;
@@ -366,9 +363,6 @@
       font-size: 1.15rem;
   }
   .history-btn {
-    padding: 1rem 2rem 2.3rem;
-    width: 300px;
-    margin-top: 5%;
     font-size: 1rem;
     font-weight: 900;
   }
