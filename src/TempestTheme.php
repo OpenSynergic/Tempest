@@ -8,6 +8,7 @@ use App\Forms\Components\TinyEditor;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -34,8 +35,8 @@ class TempestTheme extends Theme
     {
         return [
             Toggle::make('global_navigation')
-            ->default(true)
-            ->hint('Turn On/Off Global Navigation.'),
+                ->default(true)
+                ->hint('Turn On/Off Global Navigation.'),
             SpatieMediaLibraryFileUpload::make('banner')
                 ->collection('tempest-banner')
                 ->label('Upload Banner Images')
@@ -58,7 +59,7 @@ class TempestTheme extends Theme
             ColorPicker::make('text_color')
                 ->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
                 ->label(__('Banner Title Color'))
-                ->hint('Pick a color for the banner title.'), 
+                ->hint('Pick a color for the banner title.'),
             Builder::make('layouts')
                 ->collapsible()
                 ->collapsed()
@@ -80,24 +81,18 @@ class TempestTheme extends Theme
                 ->reorderableWithButtons()
                 ->collapsible()
                 ->reorderableWithDragAndDrop(True),
-                TextInput::make('button_first_text')
-                ->label('Button 1 Text (Default: Submission)')
-                ->hint('Enter the text for the first button on the banner. By default, it is labeled "Submission".')
-                ->placeholder('Enter the text for button 1'),
             
-                TextInput::make('button_first')
-                    ->label('Button 1 URL')
-                    ->placeholder('Enter the URL for the first button (e.g., https://example.com)'), 
-                
-                TextInput::make('button_second_text')
-                    ->label('Button 2 Text (Default: Register)')
-                    ->hint('Enter the text for the second button on the banner. By default, it is labeled "Register".')
-                    ->placeholder('Enter the text for button 2'),
-                
-                TextInput::make('button_second')
-                    ->label('Button 2 URL')
-                    ->placeholder('Enter the URL for the second button (e.g., https://example.com)'),
-                
+			Repeater::make('banner_buttons')	
+                ->schema([
+                    TextInput::make('text')->required(),
+                    TextInput::make('url')
+                        ->required()
+                        ->url(),
+                    ColorPicker::make('text_color'),
+                    ColorPicker::make('background_color'),
+                ])
+                ->columns(2),
+
         ];
     }
 
@@ -165,8 +160,8 @@ class TempestTheme extends Theme
             'text_color' => $this->getSetting('text_color'),
             'button_first' => $this->getSetting('button_first'),
             'button_second' => $this->getSetting('button_second'),
-            'button_first_text' => $this->getSetting('button_first_text'), 
-            'button_second_text' => $this->getSetting('button_second_text'), 
+            'button_first_text' => $this->getSetting('button_first_text'),
+            'button_second_text' => $this->getSetting('button_second_text'),
             'global_navigation' => $this->getSetting('global_navigation'),
         ];
     }

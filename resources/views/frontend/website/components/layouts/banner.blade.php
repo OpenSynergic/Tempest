@@ -52,31 +52,23 @@
                 </div>
                
                 <div class="animate-slideUp delay-400 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-                    @php
-                        $button1 = App\Facades\Plugin::getPlugin('Tempest')->getSetting('button_first') ?? route(App\Panel\ScheduledConference\Resources\SubmissionResource\Pages\ManageSubmissions::getRouteName(App\Providers\PanelProvider::PANEL_SCHEDULED_CONFERENCE));;
-                        $button2 = App\Facades\Plugin::getPlugin('Tempest')->getSetting('button_second') ?? route(App\Frontend\ScheduledConference\Pages\ParticipantRegister::getRouteName('scheduledConference'));
-                        $button1Text =App\Facades\Plugin::getPlugin('Tempest')->getSetting('button_first_text') ?? 'Submission' ;
-                        $button2Text = App\Facades\Plugin::getPlugin('Tempest')->getSetting('button_second_text') ?? 'Register' ;
-                    @endphp
-                    <a href="{{ $button1 }}" 
-                       class="banner-submission group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg shadow-md transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg">
-                        <span class="flex items-center">
-                            {{ $button1Text }}
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="{{ $button2 }}" 
-                       class="banner-register group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium bg-white text-purple-600 rounded-lg shadow-md transition-all duration-300 ease-out hover:scale-105 hover:bg-purple-50">
-                        <span class="flex items-center">
-                            {{ $button2Text }}
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                    </a>
-                </div>                
+                    @if($theme->getSetting('banner_buttons'))
+                        <div class="flex flex-col flex-wrap sm:flex-row gap-4">
+                            @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
+                                <a 
+                                    @style([
+                                        'background-color: ' . data_get($button, 'background_color') => data_get($button, 'background_color'),
+                                        'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
+                                    ])
+                                    href="{{ data_get($button, 'url') }}" 
+                                    class="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium rounded-lg shadow-md transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg"
+                                    >
+                                    {{ data_get($button, 'text') }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
