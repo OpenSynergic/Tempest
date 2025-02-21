@@ -8,6 +8,7 @@ use App\Forms\Components\TinyEditor;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -80,23 +81,17 @@ class TempestTheme extends Theme
                 ->reorderableWithButtons()
                 ->collapsible()
                 ->reorderableWithDragAndDrop(True),
-            TextInput::make('button_first_text')
-                ->label('Button 1 Text (Default: Submission)')
-                ->hint('Enter the text for the first button on the banner. By default, it is labeled "Submission".')
-                ->placeholder('Enter the text for button 1'),
-
-            TextInput::make('button_first')
-                ->label('Button 1 URL')
-                ->placeholder('Enter the URL for the first button (e.g., https://example.com)'),
-
-            TextInput::make('button_second_text')
-                ->label('Button 2 Text (Default: Register)')
-                ->hint('Enter the text for the second button on the banner. By default, it is labeled "Register".')
-                ->placeholder('Enter the text for button 2'),
-
-            TextInput::make('button_second')
-                ->label('Button 2 URL')
-                ->placeholder('Enter the URL for the second button (e.g., https://example.com)'),
+            
+			Repeater::make('banner_buttons')	
+                ->schema([
+                    TextInput::make('text')->required(),
+                    TextInput::make('url')
+                        ->required()
+                        ->url(),
+                    ColorPicker::make('text_color'),
+                    ColorPicker::make('background_color'),
+                ])
+                ->columns(2),
 
         ];
     }
