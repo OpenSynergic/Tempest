@@ -9,8 +9,10 @@
 
     <div class="animate-fadeIn relative">
         @if($imageUrls)
-            <img src="{{ $imageUrls }}" alt="Conference Banner"     
-                 class="w-full h-auto aspect-[16/7] object-cover banner-image">
+            <div class="banner-bg w-full h-auto aspect-[16/8]">
+                <img src="{{ $imageUrls }}" alt="Conference Banner"     
+                     class="w-full h-full object-cover banner-image">
+            </div>
         @else
             <div class="banner-bg w-full h-auto aspect-[16/8]"></div>
         @endif
