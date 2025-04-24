@@ -124,6 +124,9 @@ class TempestTheme extends Theme
                 $cssGenerator->root_variable('text-color', value: "{$oklchText->lightness}% {$oklchText->chroma} {$oklchText->hue}");
             }
 
+            $oklch = ColorFactory::new('#1F2937')->to(ColorSpace::OkLch);
+            $cssGenerator->root_variable('bc', "{$oklch->lightness}% {$oklch->chroma} {$oklch->hue}");
+
             $output .= <<<HTML
             <style>
                 {$cssGenerator->get_output()}
