@@ -23,6 +23,10 @@ class TempestTheme extends Theme
 {
     public function boot()
     {
+        if (app()->getCurrentScheduledConference()?->getMeta('theme') == 'Tempest') {
+            Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), prefix: 'website');
+            Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/scheduledConference/components'), prefix: 'scheduledConference');
+        }
         Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), prefix: 'tempest');
     }
 
@@ -64,25 +68,42 @@ class TempestTheme extends Theme
                 ->collapsible()
                 ->collapsed()
                 ->cloneable()
+                ->reorderableWithButtons()
+                ->reorderableWithDragAndDrop(True)
+				->blockNumbers(false)
                 ->blocks([
+                    Builder\Block::make('speakers')
+                        ->label('Speakers')
+                        ->icon('heroicon-o-users')
+                        ->maxItems(1),
+                    Builder\Block::make('sponsors')
+                        ->label('Sponsors')
+                        ->icon('heroicon-o-building-office-2')
+                        ->maxItems(1),
+                    Builder\Block::make('partners')
+                        ->label('Partners')
+                        ->icon('heroicon-o-building-office')
+                        ->maxItems(1),
+                    Builder\Block::make('latest-news')
+                        ->label('Latest News')
+                        ->icon('heroicon-o-newspaper')
+                        ->maxItems(1),
                     Builder\Block::make('layouts')
+                        ->label('Custom Content')
+						->icon('heroicon-m-bars-3-bottom-left')
                         ->schema([
                             TextInput::make('name_content')
-                                ->label('Name')
+                                ->label('Title')
                                 ->required(),
                             TinyEditor::make('about')
-                                ->label('About Site')
+                                ->label('Content')
                                 ->profile('advanced')
-                                // ->enableSvg()
-                                ->required()
+                                ->required(),
                         ]),
 
-                ])
-                ->reorderableWithButtons()
-                ->collapsible()
-                ->reorderableWithDragAndDrop(True),
-            
-			Repeater::make('banner_buttons')	
+                ]),
+
+            Repeater::make('banner_buttons')
                 ->schema([
                     TextInput::make('text')->required(),
                     TextInput::make('url')
