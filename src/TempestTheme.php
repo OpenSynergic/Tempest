@@ -64,6 +64,16 @@ class TempestTheme extends Theme
                 ->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
                 ->label(__('Banner Title Color'))
                 ->hint('Pick a color for the banner title.'),
+            Repeater::make('banner_buttons')
+                ->schema([
+                    TextInput::make('text')->required(),
+                    TextInput::make('url')
+                        ->required()
+                        ->url(),
+                    ColorPicker::make('text_color'),
+                    ColorPicker::make('background_color'),
+                ])
+                ->columns(2),
             Builder::make('layouts')
                 ->collapsible()
                 ->collapsed()
@@ -103,16 +113,7 @@ class TempestTheme extends Theme
 
                 ]),
 
-            Repeater::make('banner_buttons')
-                ->schema([
-                    TextInput::make('text')->required(),
-                    TextInput::make('url')
-                        ->required()
-                        ->url(),
-                    ColorPicker::make('text_color'),
-                    ColorPicker::make('background_color'),
-                ])
-                ->columns(2),
+
 
         ];
     }
@@ -178,7 +179,7 @@ class TempestTheme extends Theme
         return [
             'banner' => $banner,
             'countdown' => $countdown,
-            'layouts' => $this->getSetting('layouts'),
+            'layouts' => $this->getSetting('layouts') ?? [],
             'appearance_color' => $this->getSetting('appearance_color'),
             'secondary_color' => $this->getSetting('secondary_color'),
             'text_color' => $this->getSetting('text_color'),
@@ -187,6 +188,7 @@ class TempestTheme extends Theme
             'button_first_text' => $this->getSetting('button_first_text'),
             'button_second_text' => $this->getSetting('button_second_text'),
             'global_navigation' => $this->getSetting('global_navigation'),
+            'banner_buttons' => $this->getSetting('banner_buttons') ?? [],
         ];
     }
 }
